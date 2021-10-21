@@ -76,21 +76,17 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         ></script>
-        <!--con el siguiente script voy a buscar datos a un JSON y con ellos construyo un gráfico de barras-->
-        <canvas id="myChart" width="400" height="400"></canvas>
         <script>
              fetch("http://myjson.dit.upm.es/api/bins/13nr")
                 .then((response) => response.json())
                 .then((poblacion) => {
                     console.log(poblacion);
                     var lasRegiones = [],
-                        losHombres = [],
-                        lasMujeres = [];
+                        losHombres = [];
 
                     poblacion.forEach((d) => {
                         lasRegiones.push(d.region);
                         losHombres.push(d.hombres);
-                        lasMujeres.push(d.mujeres);
                     });
 
                     new Chart(document.getElementById("misBarritas").getContext("2d"), {
