@@ -135,19 +135,6 @@
                 })
                 .catch((error) => console.log("¡PLW!", error));
         </script>
-            <div id="canvas-container"></div>
-             <script>
-            function setup() {
-                var canvas = createCanvas(300, 300);
-                canvas.parent("canvas-container");
-            }
-            function draw() {
-                if (mouseIsPressed) {
-                    line(pmouseX, pmouseY, mouseX, mouseY);
-                }
-                ellipse(mouseX,mouseY,50,50);
-            }
-            </script>
-            
+          
     </body>
 </html>
