@@ -14,3 +14,7 @@
     background-position: center;
     background-size: cover;
 }
+
+svg {
+    transform: rotate(0.5turn);
+}
