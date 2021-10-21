@@ -14,7 +14,12 @@ h4,
 h5,
 h6,
 strong {
-    font-weight: 500;
+    font-weight: 600;
+}
+
+p {
+    font-weight: 200;
+    font-size: 0.2rem;
 }
 
 #fondo-con-imagen {
