@@ -134,5 +134,26 @@
                 })
                 .catch((error) => console.log("¡PLW!", error));
         </script>
+            <script>
+            function setup() {
+                var d = select("#aqui");
+                d.mousePressed(artemania);
+                createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1);
+                background(240);
+                elColor = createColorPicker("#777777").parent("controles");
+                elSlider = createSlider(1, 5, 3).parent("controles");
+            }
+            function draw() {
+                stroke(elColor.color());
+                strokeWeight(elSlider.value());
+                if (mouseIsPressed) {
+                    line(pmouseX, pmouseY, mouseX, mouseY);
+                }
+            }
+
+            function artemania() {
+                saveCanvas("mi_pinguino", "jpg");
+            }
+        </script>
     </body>
 </html>
