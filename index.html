@@ -60,27 +60,7 @@
                     <p class="d-flex justify-content-between align-items-center small"><a href="https://github.com/andreacjp">Andrea Jiménez</a> <a href="https://github.com/profesorfaco/interaccion">AUD5V0010</a></p>
                 </div>
             </div>
-                <script>
-            function setup() {
-                var d = select("#aqui");
-                d.mousePressed(artemania);
-                createCanvas(100, 100).position(0, 0).style("z-index", -1);
-                background(240);
-                elColor = createColorPicker("#777777").parent("controles");
-                elSlider = createSlider(1, 5, 3).parent("controles");
-            }
-            function draw() {
-                stroke(elColor.color());
-                strokeWeight(elSlider.value());
-                if (mouseIsPressed) {
-                    line(pmouseX, pmouseY, mouseX, mouseY);
-                }
-            }
-
-            function artemania() {
-                saveCanvas("mi_pinguino", "jpg");
-            }
-            </script>
+               
         </footer>
         <script>
 
@@ -155,6 +135,29 @@
                 })
                 .catch((error) => console.log("¡PLW!", error));
         </script>
-        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+             <script>
+                 var que = new URLSearchParams(window.location.search).get("dibuja");
+            document.querySelector("h1").textContent += que;
+            function setup() {
+                var d = select("#aqui");
+                d.mousePressed(artemania);
+                createCanvas(100, 100).position(0, 0).style("z-index", -1);
+                background(240);
+                elColor = createColorPicker("#777777").parent("controles");
+                elSlider = createSlider(1, 5, 3).parent("controles");
+            }
+            function draw() {
+                stroke(elColor.color());
+                strokeWeight(elSlider.value());
+                if (mouseIsPressed) {
+                    line(pmouseX, pmouseY, mouseX, mouseY);
+                }
+            }
+
+            function artemania() {
+                saveCanvas("mi_pinguino", "jpg");
+            }
+            </script>
     </body>
 </html>
