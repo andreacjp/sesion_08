@@ -140,10 +140,6 @@
             function setup() {
                 var canvas = createCanvas(100, 100);
                 canvas.parent("canvas-container");
-                var d = select("#aqui");
-                d.mousePressed(artemania);
-                elColor = createColorPicker("#777777").parent("controles");
-                elSlider = createSlider(1, 5, 3).parent("controles");
             }
             function draw() {
                 stroke(elColor.color());
@@ -153,6 +149,6 @@
                 }
             }
             </script>
-            <div id="canvas-container">
+            <div id="canvas-container"></div>
     </body>
 </html>
