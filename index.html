@@ -81,28 +81,23 @@
                 .then((response) => response.json())
                 .then((poblacion) => {
                     console.log(poblacion);
-                    var lasRegiones = [],
-                        losHombres = [];
+                    var nombre = [],
+                        poblacion = [];
 
                     poblacion.forEach((d) => {
-                        lasRegiones.push(d.region);
-                        losHombres.push(d.hombres);
+                        nombre.push(d.nombre);
+                        poblacion.push(d.poblacion);
                     });
 
                     new Chart(document.getElementById("misBarritas").getContext("2d"), {
                         type: "bar",
                         data: {
-                            labels: lasRegiones,
+                            labels: nombre,
                             datasets: [
                                 {
-                                    data: losHombres,
+                                    data: poblacion,
                                     backgroundColor: "#f1a340",
-                                    label: "Hombres",
-                                },
-                                {
-                                    data: lasMujeres,
-                                    backgroundColor: "#645294",
-                                    label: "Mujeres",
+                                    label: "nombre",
                                 },
                             ],
                         },
