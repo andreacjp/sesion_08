@@ -6,10 +6,6 @@
     --bs-body-font-weight: 200;
 }
 
-h1 {
-    font-size: 50rem;
-}
-
 h1,
 h2,
 h3,
@@ -19,7 +15,6 @@ h6,
 strong {
     font-weight: 800;
 }
-
 
 #fondo-con-imagen {
     height: 70vh;
