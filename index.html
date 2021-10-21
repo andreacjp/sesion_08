@@ -80,34 +80,20 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         ></script>
-            <script>
-                const config = {
-                    type: "line",
-                    data: data,
-                };
-                const labels= ["pingüino rey", "pingüino emperador", "pingüino de Humboldt", "pingüino de magallanes", "pingüino macaroni", "pingüino de Adelia"];
-                const data = {
-                    labels: labels,
-                    datasets: [{
-                        label: "Población",
-                        data: [1700000, 595000, 12000, 2600000, 18000000, 4740000]
-                        fill: true,
-                        borderColor: "rgb(75, 195, 192)",
-                        tension: 0.1
-                    }]
-                };
-            </script>
+           
         <script>
-             fetch("http://myjson.dit.upm.es/api/bins/13nr")
+             fetch("http://myjson.dit.upm.es/api/bins/lwv")
                 .then((response) => response.json())
                 .then((poblacion) => {
                     console.log(poblacion);
                     var nombre = [],
-                        poblacion = [];
+                        hembras = [],
+                        machos = [];
 
                     poblacion.forEach((d) => {
                         nombre.push(d.nombre);
-                        poblacion.push(d.poblacion);
+                        hembras.push(d.hembras);
+                        machos.push(d.machos);
                     });
 
                     new Chart(document.getElementById("misBarritas").getContext("2d"), {
@@ -116,9 +102,14 @@
                             labels: nombre,
                             datasets: [
                                 {
-                                    data: poblacion,
+                                    data: hembras,
                                     backgroundColor: "#f1a340",
-                                    label: "nombre",
+                                    label: "hembras",
+                                },
+                                {
+                                    data: machos,
+                                    backgroundColor: "#645294",
+                                    label: "machos",
                                 },
                             ],
                         },
