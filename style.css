@@ -1,8 +1,4 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap");
-
-
 
 :root {
     --bs-body-font-family: "Poppins", sans-serif;
@@ -10,6 +6,9 @@
     --bs-body-font-weight: 200;
 }
 
+h1 {
+    font-size: 10rem;
+}
 
 h1,
 h2,
