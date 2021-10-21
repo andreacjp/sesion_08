@@ -78,16 +78,16 @@
         ></script>
         <!--con el siguiente script voy a buscar datos a un JSON y con ellos construyo un gráfico de barras-->
         <script>
-            $(document).ready(function () {
-                $.getJSON("http://myjson.dit.upm.es/api/bins/1jpj", function (altura) {
-                    console.log(altura);
-        
+             fetch("https://myjson.dit.upm.es/api/bins/13nr")
+                .then((response) => response.json())
+                .then((poblacion) => {
+                    console.log(poblacion);
                     var nombre = [],
-                        altura = [],
+                        poblacion = [],
 
                     altura.forEach((d) => {
                         nombre.push(d.nombre);
-                        altura.push(d.altura);
+                        poblacion.push(d.poblacion);
                     });
 
                     new Chart(document.getElementById("misBarritas").getContext("2d"), {
@@ -96,9 +96,9 @@
                             labels: nombre,
                             datasets: [
                                 {
-                                    data: altura,
+                                    data: poblacion,
                                     backgroundColor: "#f1a340",
-                                    label: "Altura Máxima",
+                                    label: "Población",
                                 },
                             ],
                         },
@@ -115,7 +115,7 @@
                             plugins: {
                                 title: {
                                     display: true,
-                                    text: "Altura Máxima de las razas de Pingüinos",
+                                    text: "Población de Pingüinos",
                                 },
                             },
                         },
