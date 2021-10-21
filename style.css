@@ -1,11 +1,15 @@
 
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;600&display=swap");
+
+
 
 :root {
     --bs-body-font-family: "Poppins", sans-serif;
-    --bs-body-font-size: 0.2rem;
+    --bs-body-font-size: 0.9rem;
     --bs-body-font-weight: 200;
 }
+
 
 h1,
 h2,
@@ -14,22 +18,15 @@ h4,
 h5,
 h6,
 strong {
-    font-weight: 600;
+    font-weight: 800;
 }
 
-p {
-    font-weight: 200;
-    font-size: 0.2rem;
-}
 
 #fondo-con-imagen {
     height: 70vh;
     background-image: url("pinguinos.jpg");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: top;
     background-size: cover;
 }
 
-svg {
-    transform: rotate(0.5turn);
-}
