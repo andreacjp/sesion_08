@@ -135,20 +135,19 @@
                 })
                 .catch((error) => console.log("¡PLW!", error));
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+            <div id="canvas-container"></div>
              <script>
             function setup() {
-                var canvas = createCanvas(100, 100);
+                var canvas = createCanvas(300, 300);
                 canvas.parent("canvas-container");
             }
             function draw() {
-                stroke(elColor.color());
-                strokeWeight(elSlider.value());
                 if (mouseIsPressed) {
                     line(pmouseX, pmouseY, mouseX, mouseY);
                 }
+                ellipse(mouseX,mouseY,50,50);
             }
             </script>
-            <div id="canvas-container"></div>
+            
     </body>
 </html>
