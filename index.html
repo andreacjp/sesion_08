@@ -77,50 +77,8 @@
             referrerpolicy="no-referrer"
         ></script>
         <!--con el siguiente script voy a buscar datos a un JSON y con ellos construyo un gráfico de barras-->
+        <canvas id="myChart" width="400" height="400"></canvas>
         <script>
-             <!--fetch("https://myjson.dit.upm.es/api/bins/13nr")
-                .then((response) => response.json())
-                .then((poblacion) => {
-                    console.log(poblacion);
-                    var nombre = [],
-                        poblacion = [];
-
-                    altura.forEach((d) => {
-                        nombre.push(d.nombre);
-                        poblacion.push(d.poblacion);
-                    });
-
-                    new Chart(document.getElementById("misBarritas").getContext("2d"), {
-                        type: "bar",
-                        data: {
-                            labels: nombre,
-                            datasets: [
-                                {
-                                    data: poblacion,
-                                    backgroundColor: "#f1a340",
-                                    label: "Población",
-                                },
-                            ],
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    ticks: {
-                                        callback: function (numero) {
-                                            return numero.toLocaleString("es-CL");
-                                        },
-                                    },
-                                },
-                            },
-                            plugins: {
-                                title: {
-                                    display: true,
-                                    text: "Población de Pingüinos",
-                                },
-                            },
-                        },
-                    });
-                })
                 .catch((error) => console.log("¡PLW!", error));-->
              var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
