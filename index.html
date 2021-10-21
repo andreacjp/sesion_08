@@ -137,13 +137,11 @@
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
              <script>
-                 var que = new URLSearchParams(window.location.search).get("dibuja");
-            document.querySelector("h1").textContent += que;
             function setup() {
+                var canvas = createCanvas(100, 100);
+                canvas.parent("canvas-container");
                 var d = select("#aqui");
                 d.mousePressed(artemania);
-                createCanvas(100, 100).position(0, 0).style("z-index", -1);
-                background(240);
                 elColor = createColorPicker("#777777").parent("controles");
                 elSlider = createSlider(1, 5, 3).parent("controles");
             }
@@ -154,10 +152,7 @@
                     line(pmouseX, pmouseY, mouseX, mouseY);
                 }
             }
-
-            function artemania() {
-                saveCanvas("mi_pinguino", "jpg");
-            }
             </script>
+            <div id="canvas-container">
     </body>
 </html>
