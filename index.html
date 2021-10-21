@@ -85,10 +85,10 @@
         ></script>
         <!--con el siguiente script voy a buscar datos a un JSON y con ellos construyo un gráfico de barras-->
         <script>
-            $(document).ready(function () {
-                $.getJSON("http://myjson.dit.upm.es/api/bins/1jpj", function (altura) {
+              fetch("https://myjson.dit.upm.es/api/bins/1jpj")
+                .then((response) => response.json())
+                .then((altura) => {
                     console.log(altura);
-        
                     var nombre = [],
                         altura = [],
 
