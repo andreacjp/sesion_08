@@ -80,6 +80,18 @@
             crossorigin="anonymous"
             referrerpolicy="no-referrer"
         ></script>
+            <script>
+                const labels= ["pingüino rey", "pingüino emperador", "pingüino de Humboldt", "pingüino de magallanes", "pingüino macaroni", "pingüino de Adelia"];
+                const data = {
+                    labels: labels,
+                    datasets: [{
+                        label: "Población",
+                        data: [1700000, 595000, 12000, 2600000, 18000000, 4740000]
+                        fill: true,
+                        borderColor: "rgb(75, 195, 192)",
+                        tension: 0.1
+                    }]
+                };
         <script>
              fetch("http://myjson.dit.upm.es/api/bins/13nr")
                 .then((response) => response.json())
